@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{name}}'s Messages</title>
+</head>
+<body>
+<h2>Hello, {{name}}! What's on your mind today?</h2>
+
+<form action="/create-message" method="post">
+    <input type="text" placeholder="Please enter a message to post" name="messagePost" size="75">
+    <button type="submit">Submit</button>
+</form>
+
+<h3>Messages</h3>
+<ol>
+    {{#messages}}
+    <li>{{.}}</li>
+    {{/messages}}
+</ol>
+
+{{^messages}}
+No Messages... Yet :)
+{{/messages}}
+</body>
+</html>
